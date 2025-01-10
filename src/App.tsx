@@ -1,11 +1,14 @@
 import ThemeProvider from "@providers/ThemeProvider";
 import AppRouter from "@routes/AppRouter";
+import ReduxProvider from "./providers/ReduxProvider";
 
 function App() {
   return (
-    <ThemeProvider>
-      <AppRouter />
-    </ThemeProvider>
+    <ReduxProvider>
+      <ThemeProvider>
+        <AppRouter />
+      </ThemeProvider>
+    </ReduxProvider>
   );
 }
 

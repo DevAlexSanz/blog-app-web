@@ -9,9 +9,12 @@
 
     "paths": {
       "@src/*": ["./src/*"],
+      "@api/*": ["./src/api/*"],
       "@assets/*": ["./src/assets/*"],
+      "@config/*": ["./src/config/*"],
       "@pages/*": ["./src/pages/*"],
       "@providers/*": ["./src/providers/*"],
+      "@reduxConfig/*": ["./src/redux/*"],
       "@routes/*": ["./src/routes/*"]
     },
 
