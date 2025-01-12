@@ -12,7 +12,11 @@
       "@api/*": ["./src/api/*"],
       "@assets/*": ["./src/assets/*"],
       "@config/*": ["./src/config/*"],
+      "@components/*": ["./src/components/*"],
+      "@features/*": ["./src/features/*"],
+      "@layouts/*": ["./src/layouts/*"],
       "@pages/*": ["./src/pages/*"],
+      "@appTypes/*": ["./src/types/*"],
       "@providers/*": ["./src/providers/*"],
       "@reduxConfig/*": ["./src/redux/*"],
       "@routes/*": ["./src/routes/*"]

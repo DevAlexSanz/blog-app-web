@@ -1,4 +1,4 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { config } from "@config/config";
 
 const { apiUrl } = config;
@@ -10,18 +10,15 @@ const BlogApi = createApi({
   }),
   tagTypes: ["User"],
   endpoints: (builder) => ({
-    login: builder.mutation({
-      query: (credentials) => ({
-        url: "/auth/login",
-        method: "POST",
-        body: credentials,
-      }),
-    }),
     register: builder.mutation({
-      query: (credentials) => ({
+      query: ({ username, email, password }) => ({
         url: "/auth/register",
         method: "POST",
-        body: credentials,
+        body: {
+          username,
+          email,
+          password,
+        },
       }),
     }),
   }),

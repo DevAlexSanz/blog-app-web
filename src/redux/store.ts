@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { setupListeners } from "@reduxjs/toolkit/query";
 import BlogApi from "@api/blogApi";
 
 export const store = configureStore({
@@ -7,10 +6,10 @@ export const store = configureStore({
     [BlogApi.reducerPath]: BlogApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(BlogApi.middleware),
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }).concat(BlogApi.middleware),
 });
-
-setupListeners(store.dispatch);
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
